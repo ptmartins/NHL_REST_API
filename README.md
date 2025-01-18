@@ -1,0 +1,1 @@
+# NHL logos REST API
