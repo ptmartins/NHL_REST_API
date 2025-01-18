@@ -1,21 +1,5 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "client",
-            "use": "@vercel/static",
-            "config": {
-                "zeroConfig": true
-            }
-        },
-        {
-            "src": "server/server.js",
-            "use": "@vercel/node",
-            "config": {
-                "zeroConfig": true
-            }
-        }
-    ],
     "routes": [
         {
             "src": "/(.*)",
