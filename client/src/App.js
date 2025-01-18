@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import styles from './App.module.css';
 
 function App() {
   const [logos, setLogos] = useState([]);
@@ -27,13 +27,13 @@ function App() {
   }, []); 
 
   return (
-    <div>
-      <h1>Logos</h1>
-      <ul>
+    <div className={ styles.app }>
+      <h1 className={ styles.app__title }>NHL Logos</h1>
+      <ul className={ styles.logos }>
         {logos.map(logo => (
-          <li key={logo.name}>
-            <img src={`/api/logos/${logo.name}`} alt={logo.name} /> 
-            <span>{logo.name}</span>
+          <li key={logo.name} className={ styles.logo }>
+            <img src={`/api/logos/${logo.name}`} alt={logo.name} className={ styles.logo__image } /> 
+            <h2 className={ styles.logo__team }>{logo.name}</h2>
           </li>
         ))}
       </ul>
