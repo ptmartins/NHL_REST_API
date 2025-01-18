@@ -1,26 +1,25 @@
 {
-    "version": 2,
+    "version": 3,
     "builds": [
         {
-            "src": "server/server.js",
-            "use": "@vercel/node"
+            "src": "client",
+            "use": "@vercel/static",
+            "config": {
+                "zeroConfig": true
+            }
         },
         {
-            "src": "client/package.json",
-            "use": "@vercel/static-build",
+            "src": "server/server.js",
+            "use": "@vercel/node",
             "config": {
-                "distDir": "client/build"
+                "zeroConfig": true
             }
         }
     ],
     "routes": [
         {
-            "src": "/api/(.*)",
-            "dest": "server/server.js"
-        },
-        {
             "src": "/(.*)",
-            "dest": "/client/$1"
+            "dest": "serverless-function.js"
         }
     ]
 }
